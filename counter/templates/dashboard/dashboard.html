@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        #counter {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Counter Program</h1>
+        <p>Current Count: <span id="counter">0</span></p>
+        <button id="increment-btn" class="btn btn-primary">Increment</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('increment-btn').addEventListener('click', function() {
+                const counter = document.getElementById('counter');
+                counter.textContent = parseInt(counter.textContent) + 1;
+            });
+        });
+    </script>
+</body>
+</html>
